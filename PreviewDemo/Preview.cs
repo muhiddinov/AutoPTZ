@@ -94,6 +94,13 @@ namespace PreviewDemo
         private System.Windows.Forms.GroupBox groupBox2;
         private Button detect_button;
         private PictureBox copy_pictureBox;
+        private TrackBar trackBar3;
+        private TrackBar trackBar2;
+        private Button right_bottom;
+        private Panel pan_panel;
+        private Panel tilt_panel;
+        private Label label25;
+        private Label label26;
 
         //private GroupBox groupBox1;
 
@@ -186,6 +193,7 @@ namespace PreviewDemo
             this.PreSet = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.right_bottom = new System.Windows.Forms.Button();
             this.lbl_speed = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label18 = new System.Windows.Forms.Label();
@@ -202,13 +210,21 @@ namespace PreviewDemo
             this.pictureBox_process = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.trackBar3 = new System.Windows.Forms.TrackBar();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.detect_button = new System.Windows.Forms.Button();
             this.copy_pictureBox = new System.Windows.Forms.PictureBox();
+            this.pan_panel = new System.Windows.Forms.Panel();
+            this.tilt_panel = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.RealPlayWnd)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_process)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.copy_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -496,6 +512,7 @@ namespace PreviewDemo
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.right_bottom);
             this.groupBox1.Controls.Add(this.lbl_speed);
             this.groupBox1.Controls.Add(this.trackBar1);
             this.groupBox1.Controls.Add(this.label18);
@@ -513,6 +530,13 @@ namespace PreviewDemo
             this.groupBox1.TabIndex = 45;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PTZ";
+            // 
+            // right_bottom
+            // 
+            this.right_bottom.Location = new System.Drawing.Point(0, 0);
+            this.right_bottom.Name = "right_bottom";
+            this.right_bottom.Size = new System.Drawing.Size(75, 23);
+            this.right_bottom.TabIndex = 0;
             // 
             // lbl_speed
             // 
@@ -672,6 +696,8 @@ namespace PreviewDemo
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.trackBar3);
+            this.groupBox2.Controls.Add(this.trackBar2);
             this.groupBox2.Controls.Add(this.detect_button);
             this.groupBox2.Controls.Add(this.panel1);
             this.groupBox2.Location = new System.Drawing.Point(872, 522);
@@ -680,6 +706,28 @@ namespace PreviewDemo
             this.groupBox2.TabIndex = 50;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detecting process";
+            // 
+            // trackBar3
+            // 
+            this.trackBar3.Location = new System.Drawing.Point(133, 70);
+            this.trackBar3.Maximum = 255;
+            this.trackBar3.Minimum = 5;
+            this.trackBar3.Name = "trackBar3";
+            this.trackBar3.Size = new System.Drawing.Size(157, 45);
+            this.trackBar3.TabIndex = 58;
+            this.trackBar3.Value = 5;
+            this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(133, 19);
+            this.trackBar2.Maximum = 250;
+            this.trackBar2.Minimum = 1;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(157, 45);
+            this.trackBar2.TabIndex = 57;
+            this.trackBar2.Value = 4;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
             // detect_button
             // 
@@ -701,10 +749,48 @@ namespace PreviewDemo
             this.copy_pictureBox.TabIndex = 51;
             this.copy_pictureBox.TabStop = false;
             // 
+            // pan_panel
+            // 
+            this.pan_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pan_panel.Location = new System.Drawing.Point(671, 479);
+            this.pan_panel.Name = "pan_panel";
+            this.pan_panel.Size = new System.Drawing.Size(47, 39);
+            this.pan_panel.TabIndex = 50;
+            // 
+            // tilt_panel
+            // 
+            this.tilt_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tilt_panel.Location = new System.Drawing.Point(765, 479);
+            this.tilt_panel.Name = "tilt_panel";
+            this.tilt_panel.Size = new System.Drawing.Size(47, 39);
+            this.tilt_panel.TabIndex = 50;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(636, 487);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(29, 13);
+            this.label25.TabIndex = 57;
+            this.label25.Text = "PAN";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(730, 487);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(30, 13);
+            this.label26.TabIndex = 58;
+            this.label26.Text = "TILT";
+            // 
             // Preview
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1180, 687);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.tilt_panel);
+            this.Controls.Add(this.pan_panel);
             this.Controls.Add(this.copy_pictureBox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.pictureBox_process);
@@ -753,6 +839,9 @@ namespace PreviewDemo
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_process)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.copy_pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1108,7 +1197,7 @@ namespace PreviewDemo
             cam_center_y = pictureBox_process.Height / 2;
             timer = new Timer();
             timer.Tick += Timer_Tick;
-            timer.Interval = 30;
+            timer.Interval = 100;
         }
 
         private void Ptz_Set_Click(object sender, EventArgs e)
@@ -1219,10 +1308,9 @@ namespace PreviewDemo
             rgb = HexToRgb(rgb_hex);
             panel1.BackColor = rgb;
             Bitmap bitmap = CaptureControl(RealPlayWnd.Handle, RealPlayWnd.Width, RealPlayWnd.Height);
-            copy_pictureBox.Image = bitmap;
+            //copy_pictureBox.Image = bitmap;
             pictureBox_process.Image = RgbFilter(new Image<Bgr, byte>(bitmap), rgb, 100, 12 * 2 + 1, true).ToBitmap();
             drawRect();
-            objectTracking();
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -1249,6 +1337,24 @@ namespace PreviewDemo
             trackSetColor();
         }
         private int cam_center_x, cam_center_y;
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            if (trackBar2.Value >= trackBar3.Value)
+            {
+                trackBar3.Value = trackBar2.Value + 5;
+            }
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+            if (trackBar2.Value >= trackBar3.Value)
+            {
+                trackBar2.Value = trackBar3.Value - 5;
+            }
+        }
+
+
         public void drawRect()
         {
             x_max = 0;
@@ -1278,9 +1384,6 @@ namespace PreviewDemo
             if (center_object_y < 0) center_object_y = -1;
             if (center_object_x < pictureBox_process.Width && center_object_y < pictureBox_process.Height)
             {
-                object_detected = true;
-                //MessageBox.Show(x_max.ToString() + "\n" + x_min.ToString() + "\n" + y_max.ToString() + "\n" + y_min.ToString());
-                //MessageBox.Show(center_object_x.ToString() + "\n" + center_object_y.ToString());
                 Rectangle rct = new Rectangle(new Point(x_min, y_min), new Size(x_max - x_min, y_max - y_min));
                 Rectangle rct1 = new Rectangle(new Point(center_object_x - 20, center_object_y - 20), new Size(40, 40));
                 using (Pen pin = new Pen(Color.Red, 2))
@@ -1295,9 +1398,15 @@ namespace PreviewDemo
                     pictureBox_process.Image = img.Bitmap;
 
                 }
+                objectTracking();
             } else
             {
-                object_detected = false;
+                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.PAN_RIGHT, 1, 0);
+                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.PAN_LEFT, 1, 0);
+                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.TILT_UP, 1, 0);
+                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.TILT_DOWN, 1, 0);
+                y_running = false;
+                x_running = false;
             }
             
         }
@@ -1318,6 +1427,29 @@ namespace PreviewDemo
                     mask = mask.Not();
                 }
                 img.SetValue(new Bgr(0, 0, 0), mask);
+                var temp = img.SmoothGaussian(5).Convert<Gray, byte>().ThresholdBinary(new Gray(trackBar2.Value), new Gray(trackBar3.Value));
+                VectorOfVectorOfPoint contours = new VectorOfVectorOfPoint();
+                Mat m = new Mat();
+                CvInvoke.FindContours(temp, contours, m, Emgu.CV.CvEnum.RetrType.External, Emgu.CV.CvEnum.ChainApproxMethod.ChainApproxSimple);
+                copy_pictureBox.Image = temp.ToBitmap();
+                for (int i = 0; i < contours.Size; i++)
+                {
+                    double perimeter = CvInvoke.ArcLength(contours[i], true);
+                    VectorOfPoint approx = new VectorOfPoint();
+                    CvInvoke.ApproxPolyDP(contours[i], approx, 0.04 * perimeter, true);
+                    CvInvoke.DrawContours(img, contours, i, new MCvScalar(0, 255, 255), 2);
+                    var moments = CvInvoke.Moments(contours[i]);
+                    int x = (int)(moments.M10/moments.M00);
+                    int y = (int)(moments.M01/moments.M00);
+                    if (approx.Size > 6)
+                    {
+                        CvInvoke.PutText(img, "Object", new Point(x, y), Emgu.CV.CvEnum.FontFace.HersheySimplex, 0.5, new MCvScalar(0, 255, 255), 2);
+                        //object_detected = true;
+                    } else
+                    {
+                        //object_detected = false;
+                    }
+                }
             }
             catch (Exception er)
             {
@@ -1349,48 +1481,79 @@ namespace PreviewDemo
 
             return controlBmp;
         }
-        private bool object_detected = false;
-        private void objectTracking ()
+        private bool object_detected = false, x_running = false, y_running = false, x_found = false, y_found = false, full_detect = false;
+        private int detect_counter = 0;
+        private void objectTracking()
         {
-            if (object_detected == true)
+            if (detect_counter >= 20)
             {
-                if (Math.Abs(cam_center_x - center_object_x) < 20)
+                detect_counter = 0;
+                full_detect = true;
+            }
+            if (!full_detect)
+            {
+                if (Math.Abs(cam_center_x - center_object_x) < 20 && x_running)
                 {
-                    if (cam_center_y > center_object_y)
-                    {
-                        CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.TILT_UP, 0, 255);
-                    }
-                    else if (cam_center_y < center_object_y)
-                    {
-                        CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.TILT_DOWN, 0, 255);
-                    }
-                    else
-                    {
-                        CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.TILT_UP, 1, 0);
-                        CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.TILT_DOWN, 1, 0);
-                    }
-                } else
+                    CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.PAN_RIGHT, 1, 0);
+                    CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.PAN_LEFT, 1, 0);
+                    x_found = true;
+                    x_running = false;
+                    pan_panel.BackColor = Color.Green;
+                    detect_counter++;
+                }
+                else
                 {
-                    if (cam_center_x > center_object_x)
+                    pan_panel.BackColor = Color.Red;
+                }
+
+
+                if (Math.Abs(cam_center_y - center_object_y) < 20 && y_running)
+                {
+                    CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.TILT_UP, 1, 0);
+                    CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.TILT_DOWN, 1, 0);
+                    y_running = false;
+                    x_found = false;
+                    y_found = true;
+                    tilt_panel.BackColor = Color.Green;
+                }
+                else
+                {
+                    tilt_panel.BackColor = Color.Red;
+                    y_found = false;
+                }
+
+                if (!x_found)
+                {
+                    if (cam_center_x > center_object_x && !x_running)
                     {
-                        CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.PAN_LEFT, 0, 255);
+                        CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.PAN_LEFT, 0, 1);
+                        x_running = true;
                     }
-                    else if (cam_center_x < center_object_x)
+                    if (cam_center_x < center_object_x && !x_running)
                     {
-                        CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.PAN_RIGHT, 0, 255);
-                    }
-                    else
-                    {
-                        CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.PAN_RIGHT, 1, 0);
-                        CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.PAN_LEFT, 1, 0);
+                        CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.PAN_RIGHT, 0, 1);
+                        x_running = true;
                     }
                 }
-            } else
+                else
+                {
+                    if (cam_center_y > center_object_y && !y_running)
+                    {
+                        CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.TILT_UP, 0, 1);
+                        y_running = true;
+                    }
+                    if (cam_center_y < center_object_y && !y_running)
+                    {
+                        CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.TILT_DOWN, 0, 1);
+                        y_running = true;
+                    }
+                }
+            }
+            else
             {
-                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.PAN_RIGHT, 1, 0);
-                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.PAN_LEFT, 1, 0);
-                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.TILT_UP, 1, 0);
-                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle, CHCNetSDK.TILT_DOWN, 1, 0);
+                if (Math.Abs(cam_center_x -  center_object_x) > 40 || Math.Abs(cam_center_y - center_object_y) > 40) {
+                    full_detect = false;
+                }
             }
         }
     }
